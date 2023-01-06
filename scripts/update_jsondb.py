@@ -5,11 +5,13 @@ from os.path import dirname, isfile
 from youtube_archivist import YoutubeMonitor
 
 
-archive = YoutubeMonitor(db_name="FamilyCentral",
+archive =  YoutubeMonitor(db_name="FullFreeFilms",
                                       min_duration=30 * 60,
                                       blacklisted_kwords=["trailer", "teaser", "movie scene",
-                                                          "movie clip", "behind the scenes", "movie analysis",
-                                                          "Movie Preview", "soundtrack", " OST", "opening theme"])
+                                                          "movie clip", "behind the scenes",
+                                                          "Movie Preview"])
+
+
 # load previous cache
 cache_file = f"{dirname(dirname(__file__))}/bootstrap.json"
 if isfile(cache_file):
@@ -24,7 +26,7 @@ if isfile(cache_file):
     shutil.rmtree(cache_file, ignore_errors=True)
 
 for url in [
-    "https://www.youtube.com/channel/UCvRI1Nyvj9pAyHPzX7AviWQ"
+    "https://www.youtube.com/channel/UCqBi1RfMbdXES6t2iMaIYSA"
 ]:
     # parse new vids
     archive.parse_videos(url)
