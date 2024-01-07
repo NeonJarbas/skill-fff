@@ -4,13 +4,11 @@ from os.path import dirname, isfile
 
 from youtube_archivist import YoutubeMonitor
 
-
-archive =  YoutubeMonitor(db_name="FullFreeFilms",
-                                      min_duration=30 * 60,
-                                      blacklisted_kwords=["trailer", "teaser", "movie scene",
-                                                          "movie clip", "behind the scenes",
-                                                          "Movie Preview"])
-
+archive = YoutubeMonitor(db_name="FullFreeFilms",
+                         min_duration=30 * 60,
+                         blacklisted_kwords=["trailer", "teaser", "movie scene",
+                                             "movie clip", "behind the scenes",
+                                             "Movie Preview"])
 
 # load previous cache
 cache_file = f"{dirname(dirname(__file__))}/bootstrap.json"
