@@ -14,7 +14,7 @@ setup(
     author_email='jarbasai@mailfence.com',
     license='Apache-2.0',
     package_dir={"skill_fff": ""},
-    package_data={'skill_fff': ['locale/*', 'ui/*']},
+    package_data={'skill_fff': ['locale/*', 'res/*']},
     packages=['skill_fff'],
     include_package_data=True,
     install_requires=["ovos_workshop~=0.0.5a1"],

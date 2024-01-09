@@ -12,7 +12,7 @@ from ovos_workshop.skills.common_play import OVOSCommonPlaybackSkill
 class FullFreeFilmsSkill(OVOSCommonPlaybackSkill):
     def __init__(self, *args, **kwargs):
         self.supported_media = [MediaType.MOVIE]
-        self.skill_icon = self.default_bg = join(dirname(__file__), "ui", "fff_logo.png")
+        self.skill_icon = self.default_bg = join(dirname(__file__), "res", "fff_logo.png")
         self.archive = JsonStorageXDG("FullFreeFilms", subfolder="OCP")
         self.media_type_exceptions = {}
         super().__init__(*args, **kwargs)
@@ -62,7 +62,7 @@ class FullFreeFilmsSkill(OVOSCommonPlaybackSkill):
         self.archive.merge(data)
         self.schedule_event(self._sync_db, random.randint(3600, 24 * 3600))
 
-    def get_playlist(self, score=50, num_entries=250):
+    def get_playlist(self, score=50, num_entries=25):
         pl = self.featured_media()[:num_entries]
         return {
             "match_confidence": score,
